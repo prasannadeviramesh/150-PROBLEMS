@@ -1,0 +1,27 @@
+import java.io.*;
+import java.util.*;
+
+class UserMainCode {
+    public int NthPrime(int input1) {
+        return findnthprime(input1);
+    }
+
+    public static int findnthprime(int input1) {
+        int count = 0, num = 1;
+        while (count < input1) {
+            num++;
+            if (isprime(num)) {
+                count++;
+            }
+        }
+        return num;
+    }
+
+    public static boolean isprime(int num) {
+        if (num < 2) return false;
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) return false;
+        }
+        return true;
+    }
+}
